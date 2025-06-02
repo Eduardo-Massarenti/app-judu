@@ -5,7 +5,8 @@ import json
 with open("config.json", "r", encoding="utf-8") as f:
   config = json.load(f)
 
-titulo=config.get("titulo", "Página")
+titulo=config.get("qr_texto", "Texto")
+link=config.get("link", "link")
 
 def gerar_qrcode_com_coracao_e_texto(dados, texto=titulo, tamanho=450, coracao_tamanho=120):
     qr = qrcode.QRCode(
@@ -80,7 +81,7 @@ def gerar_qrcode_com_coracao_e_texto(dados, texto=titulo, tamanho=450, coracao_t
     return nova_imagem
 
 if __name__ == "__main__":
-    dados = "https://julia-eduardo.onrender.com/"
+    dados = link
     img = gerar_qrcode_com_coracao_e_texto(dados)
     img.show()
     img.save("qrcode_coracao.png")
