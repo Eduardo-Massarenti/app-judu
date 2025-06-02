@@ -74,7 +74,7 @@ def gerar_qrcode_com_coracao_e_texto(dados, texto="NÃO ME ESCANEIE", tamanho=45
     return nova_imagem
 
 if __name__ == "__main__":
-    dados = "https://openai.com"
+    dados = "https://julia-eduardo.onrender.com/"
     img = gerar_qrcode_com_coracao_e_texto(dados)
     img.show()
     img.save("qrcode_coracao.png")
