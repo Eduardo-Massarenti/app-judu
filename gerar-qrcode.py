@@ -1,7 +1,7 @@
 import qrcode
 from PIL import Image, ImageDraw, ImageFont
 
-def gerar_qrcode_com_coracao_e_texto(dados, texto="NÃO ME ESCANEIE", tamanho=450, coracao_tamanho=120):
+def gerar_qrcode_com_coracao_e_texto(dados, texto="Júlia & Eduardo", tamanho=450, coracao_tamanho=120):
     qr = qrcode.QRCode(
         version=5,
         error_correction=qrcode.constants.ERROR_CORRECT_H,
