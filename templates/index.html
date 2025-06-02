@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="{{ url_for('static', filename='img/icone.png') }}" type="image/png" />
+  <title>{{ titulo }}</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <h1>{{ titulo }}</h1>
+
+  <div id="timer">Carregando tempo...</div>
+
+  <div class="carousel-container">
+    <button class="carousel-btn prev">&#10094;</button>
+    <div class="carousel">
+      {% for img in imagens %}
+        <img src="{{ url_for('static', filename=img) }}" alt="Foto" />
+      {% endfor %}
+    </div>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+
+  <div class="container container-frase">
+    <div id="frase">
+      {% for paragrafo in frase %}
+        <p>{{ paragrafo }}</p>
+        <br>
+      {% endfor %}
+    </div>
+  </div>
+
+  <audio id="audio" autoplay loop>
+    <source src="/static/music/stuckonyou.mp3" type="audio/mpeg" />
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <script src="/static/js/cronometro.js"></script>
+  <script src="/static/js/carrossel.js"></script>
+  <script src="/static/js/audio.js"></script>
+</body>
+</html>
