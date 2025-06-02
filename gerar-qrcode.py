@@ -1,7 +1,13 @@
 import qrcode
 from PIL import Image, ImageDraw, ImageFont
+import json
 
-def gerar_qrcode_com_coracao_e_texto(dados, texto="Júlia & Eduardo", tamanho=450, coracao_tamanho=120):
+with open("config.json", "r", encoding="utf-8") as f:
+  config = json.load(f)
+
+titulo=config.get("titulo", "Página")
+
+def gerar_qrcode_com_coracao_e_texto(dados, texto=titulo, tamanho=450, coracao_tamanho=120):
     qr = qrcode.QRCode(
         version=5,
         error_correction=qrcode.constants.ERROR_CORRECT_H,
